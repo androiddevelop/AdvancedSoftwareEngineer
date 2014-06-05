@@ -35,7 +35,7 @@ public class CommandDialog extends JDialog implements ActionListener {
 		this.setTitle("命令控制台");
 		JLabel label = new JLabel(
 				"<html>命令实例如下:<br>1 创建一个圆心(100,100),半径是20的圆<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp circle#100#100#20<br>"
-						+ "<br>2 创建一个圆心(100,100),半径是20,方法1.5倍的圆<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp circle#100#100#20#1.5<br>"
+						+ "<br>2 创建一个圆心(100,100),半径是20,放大1.5倍的圆<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp circle#100#100#20#1.5<br>"
 						+ "<br>3 创建一个起点是(100,100),宽是50,高是50的矩形<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp rectangle#100#100#50#50<br><br>"
 						+ "<br>在下面输入命令,每行一条,可以输入多行命令:<br></html>");
 		cmdTa = new JTextArea();
