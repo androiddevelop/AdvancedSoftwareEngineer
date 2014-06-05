@@ -39,8 +39,10 @@ public class LineState implements IShapeState {
 					line.setShape2(shape);
 					shape.setSelected(true);
 				} else {
-					if (line.getShape2() != null) // 清空高亮显示的图形
+					if (line.getShape2() != null) { // 清空高亮显示的图形
 						line.getShape2().setSelected(false);
+						line.setShape2(null);
+					}
 					line.setTmpPoint(point);
 				}
 			}
