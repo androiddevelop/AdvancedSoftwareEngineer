@@ -5,7 +5,9 @@ AdvancedSoftwareEngineer
 
 项目说明
 -------------
-本项目是中科大高级软件工程大作业 [主页地址](http://staff.ustc.edu.cn/~yetian/CS05114)
+* 本项目是中科大高级软件工程大作业 [主页地址](http://staff.ustc.edu.cn/~yetian/CS05114)
+* 项目中图形矢量图保存格式位ase格式
+* 项目中cn.edu.ustc.ase.util.AseToPng类可以直接将ase矢量图文件转化为png文件
 
 使用说明
 ------------
