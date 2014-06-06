@@ -19,7 +19,7 @@ import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.state.PaintState;
 import cn.edu.ustc.ase.state.StateManager;
 import cn.edu.ustc.ase.util.AseFilter;
@@ -123,7 +123,7 @@ public class ToolBarPane extends JToolBar implements ActionListener {
 			try {
 				ObjectInputStream in = new ObjectInputStream(
 						new FileInputStream(filePath));
-				PaintPane.history = (List<IShape>) in.readObject();
+				PaintPane.history = (List<Shape>) in.readObject();
 				in.close();
 				paintPane.updateUI();
 			} catch (IOException | ClassNotFoundException e1) {

@@ -1,6 +1,6 @@
 package cn.edu.ustc.ase.factory;
 
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 
 /**
  * 图形工厂
@@ -14,5 +14,5 @@ public interface IFactory {
 	 * 
 	 * @return
 	 */
-	public IShape generateShape(String describe);
+	public Shape generateShape(String describe);
 }

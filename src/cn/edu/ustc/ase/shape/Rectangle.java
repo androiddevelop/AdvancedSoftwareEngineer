@@ -6,7 +6,7 @@ package cn.edu.ustc.ase.shape;
  * @author Yuedong Li
  * 
  */
-public class Rectangle extends IShape {
+public class Rectangle extends Shape {
 	private static final long serialVersionUID = -7214709097279042096L;
 	private Point startPoint; // 起点
 	private Point endPoint = new Point(); // 终点

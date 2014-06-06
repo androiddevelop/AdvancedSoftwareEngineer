@@ -6,7 +6,7 @@ package cn.edu.ustc.ase.shape;
  * @author Yuedong Li
  * 
  */
-public class Circle extends IShape {
+public class Circle extends Shape {
 	private static final long serialVersionUID = -6828009523554415690L;
 	private Point start; // 画圆的起始点
 	private Point center = new Point(); // 中心

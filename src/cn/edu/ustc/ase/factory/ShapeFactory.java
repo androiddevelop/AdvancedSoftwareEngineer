@@ -1,7 +1,7 @@
 package cn.edu.ustc.ase.factory;
 
 import cn.edu.ustc.ase.shape.Circle;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Line;
 import cn.edu.ustc.ase.shape.Rectangle;
 
@@ -30,8 +30,8 @@ public class ShapeFactory implements IFactory {
 	}
 
 	@Override
-	public IShape generateShape(String describe) {
-		IShape shape = null;
+	public Shape generateShape(String describe) {
+		Shape shape = null;
 		switch (describe) {
 		case "circle":
 			shape = new Circle();

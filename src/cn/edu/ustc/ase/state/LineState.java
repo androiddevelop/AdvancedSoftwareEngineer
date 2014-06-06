@@ -2,7 +2,7 @@ package cn.edu.ustc.ase.state;
 
 import cn.edu.ustc.ase.factory.ShapeFactory;
 import cn.edu.ustc.ase.gui.PaintPane;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Line;
 import cn.edu.ustc.ase.shape.Point;
 import cn.edu.ustc.ase.util.ShapeUtil;
@@ -21,7 +21,7 @@ public class LineState implements IShapeState {
 		if (state == MouseState.PRESS) {
 			Line line = (Line) ShapeFactory.getInstance().generateShape("line");
 			line.setSelected(true);
-			IShape shape = ShapeUtil.getSelectShape(point);
+			Shape shape = ShapeUtil.getSelectShape(point);
 			if (shape != null) {
 				line.setShape1(shape);
 				shape.setSelected(true);
@@ -34,7 +34,7 @@ public class LineState implements IShapeState {
 		} else if (state == MouseState.DRAG) {
 			if (isSelectFirstShape) {
 				Line line = PaintPane.lines.get(PaintPane.lines.size() - 1);
-				IShape shape = ShapeUtil.getSelectShape(point);
+				Shape shape = ShapeUtil.getSelectShape(point);
 				if (shape != null && shape != line.getShape1()) {
 					line.setShape2(shape);
 					shape.setSelected(true);
@@ -49,7 +49,7 @@ public class LineState implements IShapeState {
 		} else if (state == MouseState.RELEASE) {
 			if (isSelectFirstShape) {
 				Line line = PaintPane.lines.get(PaintPane.lines.size() - 1);
-				IShape shape = ShapeUtil.getSelectShape(point);
+				Shape shape = ShapeUtil.getSelectShape(point);
 				if (shape != null) {
 					line.setShape2(shape);
 					shape.setSelected(false); // 取消选中状态

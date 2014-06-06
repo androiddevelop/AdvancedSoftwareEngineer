@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.util.List;
 
 import cn.edu.ustc.ase.gui.PaintPane;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 
 /**
  * ase矢量文件转换为png图片
@@ -36,7 +36,7 @@ public class AseToPng {
 		ObjectInputStream in;
 		try {
 			in = new ObjectInputStream(new FileInputStream(asePath));
-			PaintPane.history = (List<IShape>) in.readObject();
+			PaintPane.history = (List<Shape>) in.readObject();
 			in.close();
 			ImageUtil.exportPng(desPath);
 		} catch (IOException | ClassNotFoundException e) {

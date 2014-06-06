@@ -1,7 +1,7 @@
 package cn.edu.ustc.ase.state;
 
 import cn.edu.ustc.ase.shape.Circle;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Point;
 import cn.edu.ustc.ase.shape.Rectangle;
 import cn.edu.ustc.ase.util.ShapeUtil;
@@ -19,7 +19,7 @@ public class DragState implements IShapeState {
 	@Override
 	public void modifyData(MouseState state, Point point) {
 		if (state == MouseState.PRESS) {
-			IShape shape = ShapeUtil.getSelectShape(point);
+			Shape shape = ShapeUtil.getSelectShape(point);
 			if (shape != null) {
 				isSelectShape = true;
 				startPoint = point;
@@ -28,7 +28,7 @@ public class DragState implements IShapeState {
 			}
 		} else if (state == MouseState.DRAG || state == MouseState.RELEASE) {
 			if (isSelectShape) {
-				IShape shape = ShapeUtil.getSelectShape(point);
+				Shape shape = ShapeUtil.getSelectShape(point);
 				if (shape != null) {
 					if (shape instanceof Circle) { // 修改圆形参数
 						Circle circle = (Circle) shape;

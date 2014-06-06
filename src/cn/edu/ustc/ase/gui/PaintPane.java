@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import cn.edu.ustc.ase.shape.Circle;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Line;
 import cn.edu.ustc.ase.shape.Point;
 import cn.edu.ustc.ase.shape.Rectangle;
@@ -34,7 +34,7 @@ public class PaintPane extends JPanel implements MouseListener,
 	public static List<Circle> circles = new ArrayList<Circle>(); // 所有的圆
 	public static List<Rectangle> rectangles = new ArrayList<Rectangle>(); // 所有的矩形
 	public static List<Line> lines = new ArrayList<Line>(); // 所有的连线
-	public static List<IShape> history = new ArrayList<IShape>(); // 所有的图形
+	public static List<Shape> history = new ArrayList<Shape>(); // 所有的图形
 	private MouseState mouseState; // 鼠标当前状态
 	private Point mousePoint; // 鼠标位置
 
@@ -77,7 +77,7 @@ public class PaintPane extends JPanel implements MouseListener,
 
 		// 开始画图
 		// 首先连线画线,再换图形,这样可以在再次画连线时不突出显示内部线
-		for (IShape shape : history) {
+		for (Shape shape : history) {
 			// 设置画笔颜色
 			if (shape.isSelected())
 				gg.setColor(Color.GREEN);
@@ -87,7 +87,7 @@ public class PaintPane extends JPanel implements MouseListener,
 			if (shape instanceof Line) {
 				Line line = (Line) shape;
 				Point point1 = line.getShape1().getCenterPoint();
-				IShape shape2 = line.getShape2();
+				Shape shape2 = line.getShape2();
 				Point point2;
 				if (shape2 == null) {
 					point2 = line.getTmpPoint();
@@ -97,7 +97,7 @@ public class PaintPane extends JPanel implements MouseListener,
 				gg.drawLine(point1.x, point1.y, point2.x, point2.y);
 			}
 		}
-		for (IShape shape : history) {
+		for (Shape shape : history) {
 			// 设置画笔颜色
 			if (shape.isSelected())
 				gg.setColor(Color.GREEN);

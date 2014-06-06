@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Yuedong Li
  * 
  */
-public abstract class IShape implements Serializable{
+public abstract class Shape implements Serializable{
 	private static final long serialVersionUID = 7418042969885868230L;
 	private boolean isSelected = false; // 用于判断连线的一端是否在该图形上
 

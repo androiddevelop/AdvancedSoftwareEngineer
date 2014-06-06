@@ -6,10 +6,10 @@ package cn.edu.ustc.ase.shape;
  * @author Yuedong Li
  * 
  */
-public class Line extends IShape {
+public class Line extends Shape {
 	private static final long serialVersionUID = -855456283678986529L;
-	private IShape shape1; // 连线2端的图形
-	private IShape shape2; // 连线2端的图形
+	private Shape shape1; // 连线2端的图形
+	private Shape shape2; // 连线2端的图形
 	private Point tmpPoint = new Point(); // 选中一个图形后,在拖拽中的临时点
 
 	/**
@@ -20,22 +20,22 @@ public class Line extends IShape {
 		return false;
 	}
 
-	public IShape getShape1() {
+	public Shape getShape1() {
 		return shape1;
 	}
 
-	public void setShape1(IShape shape1) {
+	public void setShape1(Shape shape1) {
 		this.shape1 = shape1;
 		Point point = shape1.getCenterPoint();
 		tmpPoint.x = point.x;
 		tmpPoint.y = point.y;
 	}
 
-	public IShape getShape2() {
+	public Shape getShape2() {
 		return shape2;
 	}
 
-	public void setShape2(IShape shape2) {
+	public void setShape2(Shape shape2) {
 		this.shape2 = shape2;
 	}
 

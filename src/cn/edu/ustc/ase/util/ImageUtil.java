@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 import cn.edu.ustc.ase.gui.PaintPane;
 import cn.edu.ustc.ase.shape.Circle;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Line;
 import cn.edu.ustc.ase.shape.Point;
 import cn.edu.ustc.ase.shape.Rectangle;
@@ -70,7 +70,7 @@ public class ImageUtil {
 			gg.setColor(Color.WHITE);
 			gg.fillRect(0, 0, 800, 500);
 			gg.setColor(Color.BLACK);
-			for (IShape shape : PaintPane.history) {
+			for (Shape shape : PaintPane.history) {
 				if (shape instanceof Circle) { // 画圆
 					Circle circle = (Circle) shape;
 					Point point = circle.getCenter();
@@ -85,7 +85,7 @@ public class ImageUtil {
 				} else if (shape instanceof Line) {
 					Line line = (Line) shape;
 					Point point1 = line.getShape1().getCenterPoint();
-					IShape shape2 = line.getShape2();
+					Shape shape2 = line.getShape2();
 					Point point2;
 					if (shape2 == null) {
 						point2 = line.getTmpPoint();

@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 
 import cn.edu.ustc.ase.factory.ShapeFactory;
 import cn.edu.ustc.ase.shape.Circle;
-import cn.edu.ustc.ase.shape.IShape;
+import cn.edu.ustc.ase.shape.Shape;
 import cn.edu.ustc.ase.shape.Point;
 import cn.edu.ustc.ase.shape.Rectangle;
 
@@ -57,7 +57,7 @@ public class CommandDialog extends JDialog implements ActionListener {
 		}
 		String[] textArr = texts.split("\\n");
 		ShapeFactory shapeFactory = ShapeFactory.getInstance();
-		List<IShape> cmdShape = new ArrayList<IShape>();
+		List<Shape> cmdShape = new ArrayList<Shape>();
 		for (int i = 0; i < textArr.length; i++) { // 检查每一条命令是否正确,将正确的加入暂存序列中
 			String text = textArr[i];
 			String[] item = text.split("#");
@@ -96,7 +96,7 @@ public class CommandDialog extends JDialog implements ActionListener {
 			}
 		}
 		// 命令均正确后执行
-		for (IShape shape : cmdShape)
+		for (Shape shape : cmdShape)
 			PaintPane.history.add(shape);
 		this.setVisible(false); // 隐藏对话框
 		paintPane.updateUI(); // 更新画板
