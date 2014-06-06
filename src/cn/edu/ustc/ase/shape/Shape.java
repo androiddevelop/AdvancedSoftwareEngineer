@@ -28,10 +28,18 @@ public abstract class Shape implements Serializable{
 	 */
 	public abstract Point getCenterPoint();
 
+	/**
+	 * 是否被选中(需要高亮显示)
+	 * @return
+	 */
 	public boolean isSelected() {
 		return isSelected;
 	}
 
+	/**
+	 * 设置选中(高亮显示)状态
+	 * @param isSelected
+	 */
 	public void setSelected(boolean isSelected) {
 		this.isSelected = isSelected;
 	}
